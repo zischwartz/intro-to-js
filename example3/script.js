@@ -15,5 +15,4 @@ $( document ).ready(function() {
       color = $('#my_input').val();
       $('body').css('background-color', color);
     });
-
 });
