@@ -1,5 +1,6 @@
+
 $( document ).ready(function() {
-    some_colors = ['#428bca', '#5cb85c', '#f0ad4e', 'gray'];
+    some_colors = ['#428bca', '#5cb85c', '#f0ad4e', '#5bc0de'];
 
     console.log( "ready!" );
 
@@ -10,10 +11,13 @@ $( document ).ready(function() {
       $('body').css('background-color', color);
     });
 
-    $("form").on('submit',function(e){
-      e.preventDefault();
-      color = $('#my_input').val();
-      $('body').css('background-color', color);
-    });
+    $("form").on('submit', changeColor);
 
 });
+
+
+changeColor = function(e){
+  e.preventDefault();
+  color = $('#my_input').val();
+  $('body').css('background-color', color);
+};

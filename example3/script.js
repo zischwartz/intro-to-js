@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    some_colors = ['#428bca', '#5cb85c', '#f0ad4e', 'gray'];
+    some_colors = ['#428bca', '#5cb85c', '#f0ad4e', '#5bc0de'];
 
     console.log( "ready!" );
 

@@ -16,5 +16,13 @@
 # Example 0 - Starter template
 
 # Example 1 - Making a page interactive
+* Make an alert slide up and down
 
-# Example 2 - Making it more interactive
+# Example 2 - User Input
+* Change the text of an element
+
+# Example 3 - Input + CSS
+* Use user input to change appearance of page
+
+# Example 4 -  Using Functions
+* Name and use a function
