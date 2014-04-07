@@ -7,8 +7,8 @@ $( document ).ready(function() {
     $("button#do_thing").on('click',function(e){
       var random_int = Math.round(Math.random()*3);
       console.log(random_int);
-      var color = some_colors[random_int];
-      $('body').css('background-color', color);
+      // pick a color, apply it to the body
+
     });
 
     $("form").on('submit', changeColor);
@@ -17,7 +17,8 @@ $( document ).ready(function() {
 
 
 changeColor = function(e){
-  e.preventDefault();
-  color = $('#my_input').val();
-  $('body').css('background-color', color);
+  //prevent default
+  // get the value of the input
+  // apply it to the body
+
 };

@@ -6,8 +6,7 @@ $( document ).ready(function() {
     $("button#do_thing").on('click',function(e){
       var random_int = Math.round(Math.random()*3);
       console.log(random_int);
-      var color = some_colors[random_int];
-      $('body').css('background-color', color);
+      // pick a color, apply it to the body
     });
 
     $("form").on('submit',function(e){
