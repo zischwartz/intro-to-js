@@ -36,10 +36,9 @@
       var state_data;
 
       $.each(window.intern_data, function(index, value){
-        // console.log(value);
-        if (value['State'] == input_value) {
-          state_data = value;
-        }
+        console.log(value);
+        // TODO if our input value matches the state, assign the data to state_value
+
       }) //end each
 
       if (state_data) {
@@ -57,7 +56,8 @@
       var years = [2009, 2010, 2011, 2012, 2013];
       $.each(years, function(index, current_year){
         var bar = $('<div class="bar">'+current_year+'</div>');
-        var height = data[current_year];
+        var height = 10 // TODO replace this with the number of interns for the year
+
         bar.css('height', height);
         bar.css('margin-top', 200-height); // 200 minus height, so the difference is up top
         $('#chart').append(bar);
