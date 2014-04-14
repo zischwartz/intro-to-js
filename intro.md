@@ -13,7 +13,5 @@
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
 
-Convert from CSV to JSON
 
-http://shancarter.github.io/mr-data-converter/
 
