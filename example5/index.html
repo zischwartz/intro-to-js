@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <style>
+       .alert { display: none;}
+       body { transition: all 1s ease;}
+       .bar {
+        background-color: lightgray;
+        color: gray;
+        width: 80px;
+        float:left;
+        text-align: center;
+       }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1> Hello World</h1>
+      <form>
+        <input type="text" class="form-control" id='my_input'>
+      </form>
+      <button type="button" class="btn btn-primary" id='do_thing'>Do A Thing</button>
+      <div class="alert alert-success ">Something here</div>
+      <div id="chart"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script>
+    // Our function to deal with the user hitting enter, or clicking the button
+    submitStuff = function(e){
+      e.preventDefault();
+      var input_value = $("#my_input").val();
+      var state_data;
+
+      $.each(window.intern_data, function(index, value){
+        // console.log(value);
+        if (value['State'] == input_value) {
+          state_data = value;
+        }
+      }) //end each
+
+      if (state_data) {
+        console.log(state_data);
+        $('h1').text(input_value);
+        makeChart(state_data);
+
+      }
+      else {
+        $('h1').text('State Not Found');
+      }
+    }; //end submitStuff
+
+    makeChart = function(data){
+      var years = [2009, 2010, 2011, 2012, 2013];
+      $.each(years, function(index, current_year){
+        var bar = $('<div class="bar">'+current_year+'</div>');
+        var height = data[current_year];
+        bar.css('height', height);
+        bar.css('margin-top', 200-height); // 200 minus height, so the difference is up top
+        $('#chart').append(bar);
+      });
+
+    }; //end makeChart
+
+    $( document ).ready(function() {
+      $.getJSON('intern.json', function(data){
+        window.intern_data = data
+        console.log(data);
+        console.log( "ready, with data" );
+        $("button#do_thing").on('click',function(e){
+          submitStuff(e);
+        });
+        $("form").on('submit', submitStuff);
+
+      }); //end getJSON
+
+    });  // end doc ready
+
+    </script>
+  </body>
+</html>
