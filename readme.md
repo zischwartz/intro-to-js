@@ -10,7 +10,6 @@
 * Servers, Clients
 * `python -m SimpleHTTPServer`
 * HTML & CSS & JS
-* [CSS Game](http://flukeout.github.io/)
 
 
 ### Example 0 - Starter template
@@ -32,3 +31,10 @@
 
 Convert from CSV to JSON
 http://shancarter.github.io/mr-data-converter/
+
+### More Resources
+- http://htmldog.com/guides/
+- http://codecademy.com/tracks/javascript
+- CSS Selector [Game](http://flukeout.github.io/)
+- http://learn.jquery.com/javascript-101/
+- http://learn.jquery.com/using-jquery-core/
